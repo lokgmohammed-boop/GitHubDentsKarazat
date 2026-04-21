@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ديون كرزات ماشاء الله</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="login-overlay" class="login-screen">
+    <div class="login-box">
+        <h1 class="shop-name" style="font-size: 30px;">قفل الوصول</h1>
+        <p>يرجى إدخال كلمة السر للدخول</p>
+        <input type="password" id="passwordInput" placeholder="كلمة السر">
+        <button class="btn-add" onclick="checkPassword()">دخول 🔓</button>
+        <p id="error-msg" style="color: #ff4d4d; display: none; margin-top: 10px;">⚠️ كلمة السر غير صحيحة!</p>
+    </div>
+</div>
+
+<div class="container" id="main-app">
+    <header class="main-header">
+        <span class="debt-label">ديون</span>
+        <h1 class="shop-name">كرزات ماشاء الله</h1>
+    </header>
+
+    <div class="box-section">
+        <div class="input-group">
+            <input type="text" id="name" placeholder="👤 اسم الشخص">
+            <input type="number" id="amount" placeholder="💰 المبلغ الكلي">
+        </div>
+        <button class="btn-add" onclick="addDebt()">➕ إضافة دين جديد</button>
+    </div>
+
+    <div class="box-section">
+        <input type="text" id="search" placeholder="🔍 ابحث عن اسم..." oninput="displayDebts()">
+    </div>
+
+    <div class="status-bar">
+        <h3 id="total">💵 مجموع الباقي: 0</h3>
+    </div>
+
+    <div class="list-section" id="list"></div>
+</div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span onclick="closeModal()" class="close">✖</span>
+        <h2>💼 إدارة الحساب</h2>
+        <div class="info-card" id="modalInfo"></div>
+        <div class="action-box arrival-section">
+            <h4>💰 دفع (وصول)</h4>
+            <input type="number" id="payInput" placeholder="أدخل المبلغ الواصل">
+            <button class="btn-pay" onclick="handleTransaction('pay')">تأكيد الدفع</button>
+        </div>
+        <hr class="separator">
+        <div class="action-box add-section">
+            <h4>➕ إضافة دين جديد</h4>
+            <input type="number" id="extraDebtInput" placeholder="أدخل المبلغ الإضافي">
+            <button class="btn-extra" onclick="handleTransaction('extra')">تأكيد الإضافة</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

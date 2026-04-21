@@ -1,0 +1,234 @@
+/* الإعدادات العامة */
+body {
+    font-family: 'Cairo', sans-serif; /* الخط العام للموقع */
+    background: radial-gradient(circle at top, #2d1e12, #0f0a07);
+    color: #f5e6c8;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* العنوان (اللمسة الفنية) */
+.main-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.debt-label {
+    display: block;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: rgba(255, 215, 0, 0.6);
+    text-transform: uppercase;
+    margin-bottom: -10px;
+}
+
+.shop-name {
+    font-family: 'Amiri', serif; /* الخط القرآني */
+    font-size: 45px;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 15px rgba(255, 215, 0, 0.4);
+    margin: 0;
+}
+
+/* الأقسام (بدون بوردر ملون) */
+.box-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* بوردر خفيف جداً */
+}
+
+/* المدخلات */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-family: 'Cairo', sans-serif;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+/* الأزرار */
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Cairo', sans-serif;
+}
+
+.btn-add {
+    background: linear-gradient(45deg, #b8860b, #ffd700);
+    color: #2b1b0f;
+}
+
+.btn-add:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* قائمة الديون */
+.debt {
+    background: rgba(255, 255, 255, 0.07);
+    padding: 15px;
+    margin-top: 12px;
+    border-radius: 12px;
+    border-right: 5px solid #ffd700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.debt-info b {
+    color: #ffd700;
+    font-size: 18px;
+}
+
+.debt-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.debt-actions button {
+    width: auto;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+/* الإحصائيات */
+.status-bar {
+    text-align: center;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+/* المودال */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #1e140c;
+    padding: 25px;
+    border-radius: 20px;
+    width: 85%;
+    max-width: 350px;
+    border: 1px solid #ffd700;
+    text-align: center;
+}
+
+.info-card {
+    background: rgba(0,0,0,0.3);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    line-height: 1.8;
+}
+
+/* تنسيقات إضافية للمودال */
+.action-box {
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.arrival-section {
+    background: rgba(46, 204, 113, 0.1); /* خلفية خضراء خفيفة للوصول */
+    border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.add-section {
+    background: rgba(231, 76, 60, 0.1); /* خلفية حمراء خفيفة للإضافة */
+    border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+.action-box h4 {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #ffd700;
+}
+
+.separator {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 215, 0, 0.2);
+    margin: 15px 0;
+}
+
+.btn-pay {
+    background: #27ae60;
+    color: white;
+}
+
+.btn-extra {
+    background: #c0392b;
+    color: white;
+}
+
+.btn-pay:hover, .btn-extra:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+/* إخفاء المحتوى الرئيسي في البداية بدون important */
+#main-app {
+    display: none;
+}
+
+/* شاشة القفل */
+.login-screen {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, #2d1e12, #000);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px);
+}
+
+
+.login-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #ffd700;
+    text-align: center;
+    max-width: 300px;
+    width: 90%;
+}
+
+.login-box p {
+    font-size: 14px;
+    color: #f5e6c8;
+    margin-bottom: 20px;
+}
