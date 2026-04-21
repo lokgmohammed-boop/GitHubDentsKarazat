@@ -4,7 +4,7 @@ let currentIndex = null;
 let attempts = 0; // عداد المحاولات
 const MAX_ATTEMPTS = 3; // الحد الأقصى
 
-const MY_PASSWORD = "1234";
+const MY_PASSWORD = "201519952024";
 
 // 2. وظيفة فحص كلمة السر
 function checkPassword() {
